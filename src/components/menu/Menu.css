@@ -5,3 +5,13 @@
 .album{
   border-radius: 1%;
 }
+.btn-outline-secondary {
+  border-color: #cf8b5c;
+}
+.btn-outline-secondary:hover,
+.btn-outline-secondary:active,
+.btn-outline-secondary:visited,
+.btn-outline-secondary::after {
+  background-color: #cf8b5c;
+  border-color: #cf8b5c;
+}

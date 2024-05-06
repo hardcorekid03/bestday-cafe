@@ -12,9 +12,10 @@ const CoffeeMenu = () => {
   }, []);
 
   return (
+    <main> 
     <section className="py-5 container">
       <div className="row py-lg-5">
-        <div class="col-lg-6 col-md-8 mx-auto  text-center">
+        <div className="col-lg-6 col-md-8 mx-auto  text-center">
           <h1 className="fw-light">Our Menu</h1>
           <p className="lead text-body-secondary"> At Bestday
             Cafe, our menu is a masterpiece of flavors, crafted with passion and
@@ -44,18 +45,12 @@ const CoffeeMenu = () => {
                       <div className="btn-group">
                         <button
                           type="button"
-                          class="btn btn-sm btn-outline-secondary"
+                          className="btn btn-sm btn-outline-secondary"
                         >
-                          View
-                        </button>
-                        <button
-                          type="button"
-                          class="btn btn-sm btn-outline-secondary"
-                        >
-                          Edit
+                         Order Now
                         </button>
                       </div>
-                      <small class="text-body-secondary">9 mins</small>
+                      <small className="text-body-secondary">9 mins</small>
                     </div>
                   </div>
                 </div>
@@ -65,6 +60,7 @@ const CoffeeMenu = () => {
         </div>
       </div>
     </section>
+    </main>
   );
 };
 
