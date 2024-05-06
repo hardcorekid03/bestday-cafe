@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -6,13 +7,27 @@ import "/src/scss/coffee.scss";
 import "./Navbar.css";
 import logo from "/src/assets/logo.svg";
 function OffcanvasExample() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 0;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <>
       {[false].map((expand) => (
         <Navbar
           key={expand}
           expand={expand}
-          className=" fixed-top navbar-expand-lg bg-transparent mb-3"
+          className={`fixed-top navbar-expand-lg mb-3 ${scrolled ? 'scrolled' : ''}`}
         >
           <Container fluid>
             <Navbar.Brand href="#" className="align-items-center justify-content-center coffee">

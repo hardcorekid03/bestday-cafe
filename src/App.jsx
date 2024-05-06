@@ -3,6 +3,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/navbar/Navbar'
 import Home from "./components/home/Home";
+import CoffeeMenu from "./components/menu/Menu";
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
     <>
       <Navbar/>
       <Home/>
+      <CoffeeMenu/>
     </>
   )
 }
