@@ -1,0 +1,178 @@
+ [
+    {
+        "name": "Cappuccino",
+        "description": "A traditional Italian coffee with equal parts espresso, steamed milk, and milk foam.",
+        "ingredients": ["Espresso", "Milk", "Foam"],
+        "hot_or_cold": "Hot",
+        "price": 3.99
+    },
+    {
+        "name": "Iced Latte",
+        "description": "A refreshing coffee drink made with espresso and chilled milk.",
+        "ingredients": ["Espresso", "Milk", "Ice"],
+        "hot_or_cold": "Cold",
+        "price": 4.5
+    },
+    {
+        "name": "Espresso",
+        "description": "A concentrated coffee beverage brewed by forcing hot water under high pressure through finely ground coffee.",
+        "ingredients": ["Espresso"],
+        "hot_or_cold": "Hot",
+        "price": 2.99
+    },
+    {
+        "name": "Americano",
+        "description": "A popular coffee drink made by diluting espresso with hot water.",
+        "ingredients": ["Espresso", "Hot Water"],
+        "hot_or_cold": "Hot",
+        "price": 3.5
+    },
+    {
+        "name": "Mocha",
+        "description": "A rich and chocolatey coffee drink made with espresso, steamed milk, chocolate syrup, and whipped cream.",
+        "ingredients": ["Espresso", "Milk", "Chocolate Syrup", "Whipped Cream"],
+        "hot_or_cold": "Hot",
+        "price": 4.25
+    },
+    {
+        "name": "Iced Coffee",
+        "description": "Chilled coffee served over ice, customizable with milk, sweeteners, or flavors.",
+        "ingredients": ["Coffee", "Ice"],
+        "hot_or_cold": "Cold",
+        "price": 3.0
+    },
+    {
+        "name": "Macchiato",
+        "description": "An espresso coffee drink with a small amount of milk foam added on top.",
+        "ingredients": ["Espresso", "Milk Foam"],
+        "hot_or_cold": "Hot",
+        "price": 3.75
+    },
+    {
+        "name": "Affogato",
+        "description": "A delightful combination of espresso poured over a scoop of vanilla ice cream or gelato.",
+        "ingredients": ["Espresso", "Vanilla Ice Cream"],
+        "hot_or_cold": "Hot",
+        "price": 4.99
+    },
+    {
+        "name": "Flat White",
+        "description": "A smooth and velvety coffee drink made with espresso and steamed milk.",
+        "ingredients": ["Espresso", "Milk"],
+        "hot_or_cold": "Hot",
+        "price": 4.25
+    },
+    {
+        "name": "Café au Lait",
+        "description": "A French-style coffee made with equal parts brewed coffee and steamed milk.",
+        "ingredients": ["Coffee", "Milk"],
+        "hot_or_cold": "Hot",
+        "price": 3.5
+    },
+    {
+        "name": "Turkish Coffee",
+        "description": "A method of preparing coffee where finely ground coffee is boiled and served in a special pot called a cezve.",
+        "ingredients": ["Coffee", "Water"],
+        "hot_or_cold": "Hot",
+        "price": 4.75
+    },
+    {
+        "name": "Mochaccino",
+        "description": "A delicious fusion of a cappuccino and a mocha, combining espresso, chocolate, steamed milk, and foam.",
+        "ingredients": ["Espresso", "Milk", "Chocolate", "Foam"],
+        "hot_or_cold": "Hot",
+        "price": 4.75
+    },
+    {
+        "name": "Iced Mocha",
+        "description": "A refreshing coffee drink made with espresso, chilled milk, chocolate syrup, and ice.",
+        "ingredients": ["Espresso", "Milk", "Chocolate Syrup", "Ice"],
+        "hot_or_cold": "Cold",
+        "price": 4.99
+    },
+    {
+        "name": "Vienna Coffee",
+        "description": "A creamy coffee drink made with espresso, whipped cream, and chocolate sprinkles.",
+        "ingredients": ["Espresso", "Whipped Cream", "Chocolate Sprinkles"],
+        "hot_or_cold": "Hot",
+        "price": 4.5
+    },
+    {
+        "name": "Irish Coffee",
+        "description": "A classic cocktail made with hot coffee, Irish whiskey, sugar, and topped with whipped cream.",
+        "ingredients": ["Coffee", "Irish Whiskey", "Sugar", "Whipped Cream"],
+        "hot_or_cold": "Hot",
+        "price": 5.5
+    },
+    {
+        "name": "Caramel Macchiato",
+        "description": "An espresso-based drink with steamed milk, vanilla syrup, and a caramel drizzle.",
+        "ingredients": ["Espresso", "Milk", "Vanilla Syrup", "Caramel Drizzle"],
+        "hot_or_cold": "Hot",
+        "price": 4.75
+    },
+    {
+        "name": "Frappuccino",
+        "description": "A blended coffee beverage with ice, milk, and various flavors, topped with whipped cream.",
+        "ingredients": ["Coffee", "Milk", "Ice", "Flavor", "Whipped Cream"],
+        "hot_or_cold": "Cold",
+        "price": 4.99
+    },
+    {
+        "name": "Hazelnut Latte",
+        "description": "A creamy latte with hazelnut syrup, espresso, and steamed milk.",
+        "ingredients": ["Espresso", "Milk", "Hazelnut Syrup"],
+        "hot_or_cold": "Hot",
+        "price": 4.25
+    },
+    {
+        "name": "Breve",
+        "description": "An indulgent coffee drink made with espresso and half-and-half instead of milk.",
+        "ingredients": ["Espresso", "Half-and-Half"],
+        "hot_or_cold": "Hot",
+        "price": 4.5
+    },
+    {
+        "name": "Café Miel",
+        "description": "A sweet and spiced coffee drink made with espresso, steamed milk, honey, and cinnamon.",
+        "ingredients": ["Espresso", "Milk", "Honey", "Cinnamon"],
+        "hot_or_cold": "Hot",
+        "price": 4.75
+    },
+    {
+        "name": "Coconut Iced Coffee",
+        "description": "A tropical twist on iced coffee with coconut milk, espresso, and ice.",
+        "ingredients": ["Espresso", "Coconut Milk", "Ice"],
+        "hot_or_cold": "Cold",
+        "price": 4.5
+    },
+    {
+        "name": "Café Cubano",
+        "description": "A strong and sweet espresso-based drink originating from Cuba.",
+        "ingredients": ["Espresso", "Sugar"],
+        "hot_or_cold": "Hot",
+        "price": 3.99
+    },
+    {
+        "name": "White Chocolate Mocha",
+        "description": "A decadent coffee drink made with white chocolate sauce, espresso, steamed milk, and whipped cream.",
+        "ingredients": ["Espresso", "Milk", "White Chocolate Sauce", "Whipped Cream"],
+        "hot_or_cold": "Hot",
+        "price": 4.99
+    },
+    {
+        "name": "Thai Iced Coffee",
+        "description": "A sweet and creamy iced coffee with a hint of cardamom and a drizzle of condensed milk.",
+        "ingredients": ["Coffee", "Cardamom", "Condensed Milk", "Ice"],
+        "hot_or_cold": "Cold",
+        "price": 4.75
+    },
+    {
+        "name": "Peppermint Mocha",
+        "description": "A festive coffee drink made with espresso, steamed milk, chocolate syrup, peppermint flavor, and whipped cream.",
+        "ingredients": ["Espresso", "Milk", "Chocolate Syrup", "Peppermint Flavor", "Whipped Cream"],
+        "hot_or_cold": "Hot",
+        "price": 5.25
+    }
+]
+

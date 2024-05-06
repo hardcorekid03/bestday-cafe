@@ -29,6 +29,9 @@
     display: flex;
     flex-direction: row;
   }
+  .social-icon:hover {
+    color:#cf8b5c;
+    }
   
 }
 
@@ -47,6 +50,9 @@
     display: flex;
     flex-direction: row;
   }
+  .social-icon:hover {
+    color:#cf8b5c;
+    }
 }
 @media (max-width: 991.98px) {
   .content {
@@ -63,6 +69,9 @@
     display: flex;
     flex-direction: row;
   }
+  .social-icon:hover {
+    color:#cf8b5c;
+    }
 }
 .btn-secondary {
   background-color: #110803;
@@ -86,4 +95,9 @@
 .social-icon {
   font-size: 24px;
   margin-right: 10px;
+  height: auto;
+  width: auto;
+}
+.social-icon:hover {
+color: aliceblue;
 }
