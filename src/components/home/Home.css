@@ -1,0 +1,54 @@
+.landing-page {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+}
+
+.content {
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+}
+@media (max-width: 575.98px) {
+  .content {
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    transform: translate(-10%, -70%);
+    text-align: left;
+  }
+}
+@media (max-width: 767.98px) {
+  .content {
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    transform: translate(-20%, -70%);
+    text-align: left;
+  }
+}
+@media (max-width: 991.98px) {
+  .content {
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    transform: translate(-20%, -60%);
+    text-align: left;
+  }
+}
+.btn-secondary {
+  background-color: #110803;
+  border-color: #110801;
+}
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:visited,
+.btn-secondary::after {
+  background-color: #cf8b5c;
+  border-color: #cf8b5c;
+}
