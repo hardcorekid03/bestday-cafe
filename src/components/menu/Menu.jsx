@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./Menu.css";
 
 const CoffeeMenu = () => {
@@ -9,6 +11,11 @@ const CoffeeMenu = () => {
       .then((response) => response.json())
       .then((data) => setCoffees(data))
       .catch((error) => console.log(error));
+  }, []);
+
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
   }, []);
 
   return (
@@ -31,15 +38,15 @@ const CoffeeMenu = () => {
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
               {coffees.slice(0, 24).map((coffee) => (
                 <div className="col-md-4" key={coffee.name}>
-                  <div className="card shadow-sm">
+                  <div className="card shadow-sm" >
                     <img
                     src={coffee.url}
-                      className="card-img-top"
+                      className="card-img-top" data-aos="flip-up"
                       width="100%"
                       height="225"
                       alt={coffee.name}
                     />
-                    <div className="card-body">
+                    <div className="card-body" data-aos="zoom-in-up">
                       <h5 className="card-title">{coffee.name}</h5>
                       <p className="card-text">{coffee.description}</p>
                       <p className="card-text">
