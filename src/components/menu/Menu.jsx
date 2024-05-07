@@ -30,7 +30,7 @@ const CoffeeMenu = () => {
           <div className="container">
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
               {coffees.slice(0, 24).map((coffee) => (
-                <div className="col-md-4" key={coffee.id}>
+                <div className="col-md-4" key={coffee.name}>
                   <div className="card shadow-sm">
                     <img
                     src={coffee.url}
@@ -43,14 +43,14 @@ const CoffeeMenu = () => {
                       <h5 className="card-title">{coffee.name}</h5>
                       <p className="card-text">{coffee.description}</p>
                       <p className="card-text">
-                        Ingredients: {coffee.ingredients + " " +  ","} 
+                        Ingredients: {coffee.ingredients + " "} 
                       </p>
-                      <p className="card-text">Price: Php. {coffee.price}</p>
+                      <p className="card-text">Price: Php. {coffee.price}.00</p>
                       <div className="d-flex justify-content-between align-items-center">
                         <div className="btn-group">
                           <button
                             type="button"
-                            className="btn btn-sm btn-outline-secondary"
+                            className="btn btn-sm btn-secondary"
                           >
                             Order Now
                           </button>
