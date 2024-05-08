@@ -46,7 +46,7 @@ const CoffeeMenu = () => {
                       height="225"
                       alt={coffee.name}
                     />
-                    <div className="card-body" data-aos="zoom-in-up">
+                    <div className="card-body" data-aos="fade-up">
                       <h5 className="card-title">{coffee.name}</h5>
                       <p className="card-text">{coffee.description}</p>
                       <p className="card-text">
