@@ -10,19 +10,17 @@ import { Link } from "react-router-dom";
 
 function OffcanvasExample() {
   const [scrolled, setScrolled] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 0;
       setScrolled(isScrolled);
     };
-
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <>
       {[false].map((expand) => (
@@ -35,12 +33,16 @@ function OffcanvasExample() {
         >
           <Container fluid>
             <Navbar.Brand
-               as={Link} to="/"
+              as={Link}
+              to="/"
               className="align-items-center justify-content-center coffee"
             >
               <img src={logo} alt="Logo" height={50} width={50} />
             </Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Toggle
+              aria-controls={`offcanvasNavbar-expand-${expand}`}
+              className="custom-toggle coffee"
+            />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
@@ -70,7 +72,11 @@ function OffcanvasExample() {
                   >
                     Menu
                   </Nav.Link>
-                  <Nav.Link className="nav-link poppins-medium">
+                  <Nav.Link
+                    as={Link}
+                    to="/booking"
+                    className="nav-link poppins-medium"
+                  >
                     Booking
                   </Nav.Link>
                   <Nav.Link className="nav-link poppins-medium">

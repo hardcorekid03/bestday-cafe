@@ -2,10 +2,9 @@ import "./App.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/navbar/Navbar'
-import Home from "./components/home/Home";
-import CoffeeMenu from "./components/menu/Menu";
 import { BrowserRouter as Router } from "react-router-dom";
 import AppRoutes from "../src/components/routes/Routes"
+
 
 function App() {
   return (
@@ -15,6 +14,7 @@ function App() {
 <Navbar/>
   <AppRoutes/>
 </Router>
+
     </>
   )
 }
