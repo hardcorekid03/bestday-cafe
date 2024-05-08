@@ -4,6 +4,7 @@ import Home from "../home/Home";
 import CoffeeMenu from "../menu/Menu";
 import Booking from "../booking/Booking";
 import Gallery from "../gallery/Gallery";
+import Contact from "../contact/Contact";
 
 
 const AppRoutes = () => {
@@ -13,6 +14,7 @@ const AppRoutes = () => {
             <Route path ="/menu" element={<CoffeeMenu/>}/>3
             <Route path ="/booking" element={<Booking/>}/>
             <Route path ="/gallery" element={<Gallery/>}/>
+            <Route path ="/contact" element={<Contact/>}/>
             <Route path ="*" element={<h1>Error 404: Page not found!</h1>}/>
         </Routes>
     )

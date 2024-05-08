@@ -86,7 +86,11 @@ function OffcanvasExample() {
                   >
                     Gallery
                   </Nav.Link>
-                  <Nav.Link className="nav-link  poppins-medium">
+                  <Nav.Link
+                    as={Link}
+                    to="/contact"
+                    className="nav-link  poppins-medium"
+                  >
                     Contact Us
                   </Nav.Link>
                 </Nav>

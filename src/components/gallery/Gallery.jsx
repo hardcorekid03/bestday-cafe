@@ -11,7 +11,7 @@ import img9 from "./images/img9.jpg";
 
 function Gallery() {
   return (
-    <section className=" container py-5">
+    <section className="container py-5">
       <div className="row py-lg-5">
         <div className="col-lg-6 col-md-8 mx-auto  text-center">
           <h1 className="fw-light">Where everyday is the best day!</h1>

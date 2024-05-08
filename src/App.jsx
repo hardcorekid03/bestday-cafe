@@ -5,7 +5,6 @@ import Navbar from './components/navbar/Navbar'
 import { BrowserRouter as Router } from "react-router-dom";
 import AppRoutes from "../src/components/routes/Routes"
 
-
 function App() {
   return (
     <>
@@ -14,6 +13,7 @@ function App() {
 <Navbar/>
   <AppRoutes/>
 </Router>
+
 
     </>
   )
