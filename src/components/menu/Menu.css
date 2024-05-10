@@ -1,8 +1,4 @@
-.coffee-menu-container {
-    margin-top: 100px;
-  }
-  
-.album{
+.container{
   border-radius: 1%;
 }
 .btn-secondary {

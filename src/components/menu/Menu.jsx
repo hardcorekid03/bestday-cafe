@@ -4,6 +4,9 @@ import "aos/dist/aos.css";
 import "./Menu.css";
 
 const CoffeeMenu = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [coffees, setCoffees] = useState([]);
 
   useEffect(() => {
@@ -33,7 +36,7 @@ const CoffeeMenu = () => {
             </p>
           </div>
         </div>
-        <div className="album py-5 bg-body-tertiary">
+        <div className="container py-5 bg-body-tertiary">
           <div className="container">
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
               {coffees.slice(0, 24).map((coffee) => (

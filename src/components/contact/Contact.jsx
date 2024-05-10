@@ -4,8 +4,9 @@ import img1 from "../gallery/images/img2.jpg"
 
 function Contact() {
   return (
-    <section className="container py-5">
-      <div className="row py-lg-5">
+    <main>
+          <section className="container py-5">
+      <div className="contact row py-lg-5">
         <div className="row justify-content-center">
           <div className="col-xl-10">
             <div className="contactform2 card border-0 rounded-3 shadow-lg overflow-hidden">
@@ -118,6 +119,8 @@ function Contact() {
         </div>
       </div>
     </section>
+       </main>
+
   );
 }
 

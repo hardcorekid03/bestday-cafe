@@ -38,6 +38,7 @@ function Booking() {
   }, []);
 
   return (
+    <>
     <section className="main-page">
     <div className="reservation-form-container bg-cover" style={{ backgroundImage: `url(${backgroundImage})` }}>
     <div className="reservation-form shadow-lg">
@@ -104,6 +105,9 @@ function Booking() {
     </div>
     </div>
     </section>
+
+    </>
+
   );
 }
 

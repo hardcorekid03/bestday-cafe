@@ -59,6 +59,7 @@ function OffcanvasExample() {
               <Offcanvas.Body>
                 <Nav className="justify-content-center flex-grow-1 pe-3">
                   <Nav.Link
+                  collapseOnSelect
                     as={Link}
                     to="/"
                     className="nav-link link poppins-medium"
