@@ -9,6 +9,7 @@ import logo from "/src/assets/logo.svg";
 import { Link } from "react-router-dom";
 
 function OffcanvasExample() {
+  
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -59,7 +60,7 @@ function OffcanvasExample() {
               <Offcanvas.Body>
                 <Nav className="justify-content-center flex-grow-1 pe-3">
                   <Nav.Link
-                  collapseOnSelect
+                  
                     as={Link}
                     to="/"
                     className="nav-link link poppins-medium"
