@@ -38,7 +38,7 @@ function OffcanvasExample() {
               to="/"
               className="align-items-center justify-content-center coffee"
             >
-              <img src={logo} alt="Logo" height={40} width={40} />
+              <strong className="mocha">Bestday Café</strong>
             </Navbar.Brand>
             <Navbar.Toggle
               aria-controls={`offcanvasNavbar-expand-${expand}`}
