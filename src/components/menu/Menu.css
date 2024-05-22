@@ -1,15 +1,19 @@
-.container{
+.container {
   border-radius: 1%;
 }
 .btn-secondary {
   border-color: #cf8b5c;
-  background-color:#cf8b5c;
- ;
+  background-color: #cf8b5c;
 }
 .btn-secondary:hover,
 .btn-secondary:active,
 .btn-secondary:visited,
 .btn-secondary::after {
-  background-color: #110803;;
-  border-color: #110803;;
+  background-color: #110803;
+  border-color: #110803;
+}
+.menu-section {
+  background-color: #ffffff;
+  background-image: url(http://www.transparenttextures.com/patterns/wood-pattern.png);
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }

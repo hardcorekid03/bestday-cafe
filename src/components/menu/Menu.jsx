@@ -23,13 +23,13 @@ const CoffeeMenu = () => {
 
   return (
     <main>
-      <section className="py-5 container">
+      <section className="menu-section py-5 container">
         <div className="row py-lg-5">
           <div className="col-lg-6 col-md-8 mx-auto  text-center">
             <h1 className="fw-light">Our Menu</h1>
             <p className="lead text-body-secondary">
               {" "}
-              At Bestday Cafe, our menu is a masterpiece of flavors, crafted
+              At Bestday Café, our menu is a masterpiece of flavors, crafted
               with passion and innovation. From fresh seafood to tender meats
               and vibrant vegetarian options, every dish is a celebration of
               taste.

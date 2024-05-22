@@ -9,8 +9,13 @@ import logo from "/src/assets/logo.svg";
 import { Link } from "react-router-dom";
 
 function OffcanvasExample() {
-  
+  const [showOffcanvas, setShowOffcanvas] = useState(false); // State to control offcanvas visibility
   const [scrolled, setScrolled] = useState(false);
+
+  const closeOffcanvas = () => {
+    setShowOffcanvas(false);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 0;
@@ -43,8 +48,12 @@ function OffcanvasExample() {
             <Navbar.Toggle
               aria-controls={`offcanvasNavbar-expand-${expand}`}
               className="custom-toggle coffee"
+              onClick={() => setShowOffcanvas(true)} // Open offcanvas on toggle click
             />
             <Navbar.Offcanvas
+              className="navbar-offcanvas"
+              show={showOffcanvas} // Control offcanvas visibility
+              onHide={closeOffcanvas} // Close offcanvas when clicking outside
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end"
@@ -60,10 +69,10 @@ function OffcanvasExample() {
               <Offcanvas.Body>
                 <Nav className="justify-content-center flex-grow-1 pe-3">
                   <Nav.Link
-                  
                     as={Link}
                     to="/"
                     className="nav-link link poppins-medium"
+                    onClick={closeOffcanvas} // Close offcanvas when item is clicked
                   >
                     Home
                   </Nav.Link>
@@ -71,6 +80,8 @@ function OffcanvasExample() {
                     as={Link}
                     to="/menu"
                     className="nav-link link poppins-medium"
+                    onClick={closeOffcanvas} // Close offcanvas when item is clicked
+
                   >
                     Menu
                   </Nav.Link>
@@ -78,6 +89,8 @@ function OffcanvasExample() {
                     as={Link}
                     to="/booking"
                     className="nav-link poppins-medium"
+                    onClick={closeOffcanvas} // Close offcanvas when item is clicked
+
                   >
                     Booking
                   </Nav.Link>
@@ -85,6 +98,8 @@ function OffcanvasExample() {
                     as={Link}
                     to="/gallery"
                     className="nav-link poppins-medium"
+                    onClick={closeOffcanvas} // Close offcanvas when item is clicked
+
                   >
                     Gallery
                   </Nav.Link>
@@ -92,6 +107,8 @@ function OffcanvasExample() {
                     as={Link}
                     to="/contact"
                     className="nav-link  poppins-medium"
+                    onClick={closeOffcanvas} // Close offcanvas when item is clicked
+
                   >
                     Contact Us
                   </Nav.Link>
