@@ -9,8 +9,11 @@ const CoffeeMenu = () => {
   }, []);
   const [coffees, setCoffees] = useState([]);
 
+  const apiKey = import.meta.env.VITE_BACKEND_URL; // variable for backend
+
+
   useEffect(() => {
-    fetch("https://mern-server-mwrx.onrender.com/api/coffee")
+    fetch(apiKey + "api/coffee")
       .then((response) => response.json())
       .then((data) => setCoffees(data))
       .catch((error) => console.log(error));
