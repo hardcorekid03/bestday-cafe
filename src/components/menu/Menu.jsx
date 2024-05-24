@@ -10,7 +10,7 @@ const CoffeeMenu = () => {
   const [coffees, setCoffees] = useState([]);
 
   useEffect(() => {
-    fetch("https://mern-server-mwrx.onrender.com/api/coffee")
+    fetch("/api/coffee")
       .then((response) => response.json())
       .then((data) => setCoffees(data))
       .catch((error) => console.log(error));
