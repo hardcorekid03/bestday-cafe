@@ -10,7 +10,7 @@ const CoffeeMenu = () => {
   const [coffees, setCoffees] = useState([]);
 
   useEffect(() => {
-    fetch("https://hardcorekid03.github.io/coffee-menu/coffee-menu.json")
+    fetch("https://mern-server-mwrx.onrender.com/api/coffee")
       .then((response) => response.json())
       .then((data) => setCoffees(data))
       .catch((error) => console.log(error));
@@ -40,10 +40,10 @@ const CoffeeMenu = () => {
           <div className="container">
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
               {coffees.slice(0, 24).map((coffee) => (
-                <div className="col-md-4" key={coffee.name}>
+                <div className="col-md-4" key={coffee.id}>
                   <div className="card shadow-sm" >
                     <img
-                    src={coffee.url}
+                    src={coffee.image}
                       className="card-img-top" data-aos="flip-up"
                       width="100%"
                       height="225"
@@ -52,10 +52,10 @@ const CoffeeMenu = () => {
                     <div className="card-body" data-aos="fade-up">
                       <h5 className="card-title">{coffee.name}</h5>
                       <p className="card-text">{coffee.description}</p>
-                      <p className="card-text">
-                        Ingredients: {coffee.ingredients + " "} 
-                      </p>
                       <p className="card-text">Price: Php. {coffee.price}.00</p>
+                      <p className="card-text">
+                        Created: {coffee.createdAt + " "} 
+                      </p>
                       <div className="d-flex justify-content-between align-items-center">
                         <div className="btn-group">
                           <button
