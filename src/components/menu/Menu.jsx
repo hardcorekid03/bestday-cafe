@@ -10,8 +10,6 @@ const CoffeeMenu = () => {
   const [coffees, setCoffees] = useState([]);
 
   const apiKey = import.meta.env.VITE_BACKEND_URL; // variable for backend
-
-
   useEffect(() => {
     fetch(apiKey + "api/coffee")
       .then((response) => response.json())
@@ -39,44 +37,59 @@ const CoffeeMenu = () => {
             </p>
           </div>
         </div>
-        <div className="container py-5 bg-body-tertiary">
-          <div className="container">
-            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-              {coffees.slice(0, 24).map((coffee) => (
-                <div className="col-md-4" key={coffee.id}>
-                  <div className="card shadow-sm" >
-                    <img
-                    src={coffee.image}
-                      className="card-img-top" data-aos="flip-up"
-                      width="100%"
-                      height="225"
-                      alt={coffee.name}
-                    />
-                    <div className="card-body" data-aos="fade-up">
-                      <h5 className="card-title">{coffee.name}</h5>
-                      <p className="card-text">{coffee.description}</p>
-                      <p className="card-text">Price: Php. {coffee.price}.00</p>
-                      <p className="card-text">
-                        Created: {coffee.createdAt + " "} 
-                      </p>
-                      <div className="d-flex justify-content-between align-items-center">
-                        <div className="btn-group">
-                          <button
-                            type="button"
-                            className="btn btn-sm btn-secondary"
-                          >
-                            Order Now
-                          </button>
+        {coffees ? (
+          <div className="container py-5 ">
+            <div className="container">
+              <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                {coffees.slice(0, 24).map((coffee) => (
+                  <div className="col-md-4" key={coffee.id}>
+                    <div className="card shadow-sm">
+                      <img
+                        src={coffee.image}
+                        className="card-img-top"
+                        data-aos="flip-up"
+                        width="100%"
+                        height="225"
+                        alt={coffee.name}
+                      />
+                      <div className="card-body" data-aos="fade-up">
+                        <h5 className="card-title">{coffee.name}</h5>
+                        <p className="card-text">{coffee.description}</p>
+                        <p className="card-text">
+                          Price: Php. {coffee.price}.00
+                        </p>
+                        <p className="card-text">
+                          Created: {coffee.createdAt + " "}
+                        </p>
+                        <div className="d-flex justify-content-between align-items-center">
+                          <div className="btn-group">
+                            <button
+                              type="button"
+                              className="btn btn-sm btn-secondary"
+                            >
+                              Order Now
+                            </button>
+                          </div>
+                          <small className="text-body-secondary">
+                            {coffee.hot_or_cold}
+                          </small>
                         </div>
-                        <small className="text-body-secondary">{coffee.hot_or_cold}</small>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
+        ) : (
+          <div class="card-loading">
+          <div class="loading">
+            <span ></span>
+            <span ></span>
+            <span ></span>
+          </div>
         </div>
+        )}
       </section>
     </main>
   );
