@@ -82,13 +82,9 @@ const CoffeeMenu = () => {
             </div>
           </div>
         ) : (
-          <div class="card-loading">
-          <div class="loading">
-            <span ></span>
-            <span ></span>
-            <span ></span>
+          <div class="container py-5">
+            <p> Loading... </p>
           </div>
-        </div>
         )}
       </section>
     </main>
