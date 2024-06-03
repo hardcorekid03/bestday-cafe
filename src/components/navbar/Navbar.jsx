@@ -5,7 +5,6 @@ import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import "/src/scss/coffee.scss";
 import "./Navbar.css";
-import logo from "/src/assets/logo.svg";
 import { Link } from "react-router-dom";
 
 function OffcanvasExample() {
@@ -67,7 +66,7 @@ function OffcanvasExample() {
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
-                <Nav className="justify-content-center flex-grow-1 pe-3">
+                <Nav className="justify-content-center flex-grow-1 pe-3=">
                   <Nav.Link
                     as={Link}
                     to="/"
