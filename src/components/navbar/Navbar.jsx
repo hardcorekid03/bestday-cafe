@@ -84,15 +84,7 @@ function OffcanvasExample() {
                   >
                     Menu
                   </Nav.Link>
-                  <Nav.Link
-                    as={Link}
-                    to="/booking"
-                    className="nav-link poppins-medium"
-                    onClick={closeOffcanvas} // Close offcanvas when item is clicked
 
-                  >
-                    Booking
-                  </Nav.Link>
                   <Nav.Link
                     as={Link}
                     to="/gallery"
@@ -101,6 +93,15 @@ function OffcanvasExample() {
 
                   >
                     Gallery
+                  </Nav.Link>
+                  <Nav.Link
+                    as={Link}
+                    to="/blogs"
+                    className="nav-link poppins-medium"
+                    onClick={closeOffcanvas} // Close offcanvas when item is clicked
+
+                  >
+                    Blogs
                   </Nav.Link>
                   <Nav.Link
                     as={Link}

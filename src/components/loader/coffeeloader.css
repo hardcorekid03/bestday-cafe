@@ -1,0 +1,49 @@
+#skeleton-loadingCoffeeCup {
+    height: 85px;
+    width: 73px;
+    opacity: 0.7;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#skeleton-loadingCoffeeSteam {
+    opacity: 0.4;
+    stroke-dasharray: 25;
+    animation: dash 2.4s infinite linear;
+}
+@keyframes LoadingGradient {
+    0% {
+        background-position: 200% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: 25;
+    }
+
+    to {
+        stroke-dashoffset: -25;
+    }
+}
+
+h3{font-size:12pt; font-weight:0400; margin-bottom:0pt}
+h4{font-size:24pt; color:#dedede; margin-top:20px;}
+a{color:#154c3c; text-decoration:none}
+a:hover{text-decoration:underline}
+
+body {
+  color:#666;
+  min-height: 100vh;
+  font-family: Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #F6F8FF;    
+}
