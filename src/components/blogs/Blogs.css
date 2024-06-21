@@ -1,46 +1,38 @@
-.blog-section {
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.post-title{
-cursor: pointer;
-}
-.post-title:hover{
-  color: #110803;
+/* About.css */
+.about-page {
+  padding: 60px 15px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-hr {
-    margin: 1rem 0;
-    color: inherit;
-    border: 0;
-    border-top: 1px solid;
-    opacity: 0.25;
-  }
-  .post-preview > a {
-    color: #110803;
-  }
-  .post-preview > a:focus, .post-preview > a:hover {
-    text-decoration: none;
-    color:  #cf8b5c;
-  }
-  .post-preview > a > .post-title {
-    font-size: 1.875rem;
-    margin-top: 1.875rem;
-    margin-bottom: 0.625rem;
-  }
-  .post-preview > a > .post-subtitle {
-    font-weight: 300;
-    margin-bottom: 0.625rem;
-  }
-  .post-preview > .post-meta {
-    font-size: 1.125rem;
-    font-style: italic;
-    margin-top: 0;
-    color: #6c757d;
-  }
-  .post-preview > .post-meta > a {
-    text-decoration: none;
-  }
+.about-image {
+  margin-bottom: 20px;
+  object-fit: cover;
+
   
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  max-width: 100%; /* Ensure the image does not exceed its container width */
+  
+}
+
+.about-text {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  margin-top: 20px;
+  color: #cf8b5c;
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+}

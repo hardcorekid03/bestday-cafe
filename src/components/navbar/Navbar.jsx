@@ -101,7 +101,7 @@ function OffcanvasExample() {
                     onClick={closeOffcanvas} // Close offcanvas when item is clicked
 
                   >
-                    Blogs
+                    About
                   </Nav.Link>
                   <Nav.Link
                     as={Link}
