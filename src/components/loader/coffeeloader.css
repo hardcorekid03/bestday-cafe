@@ -32,7 +32,7 @@
     }
 }
 
-h3{font-size:12pt; font-weight:0400; margin-bottom:0pt}
+h3{font-size:12pt; font-weight:0400; margin-bottom:0pt;  color:#2d2926;}
 
 .loader {
     display: flex;

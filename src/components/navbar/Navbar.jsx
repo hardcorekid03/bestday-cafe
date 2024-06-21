@@ -59,7 +59,7 @@ function OffcanvasExample() {
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title
-                  className=""
+                  className="offcanvas-title"
                   id={`offcanvasNavbarLabel-expand-${expand}`}
                 >
                   Bestday Café
