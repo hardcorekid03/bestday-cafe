@@ -1,15 +1,6 @@
 /* About.css */
-.about-page {
-  padding: 60px 15px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 .about-image {
-  margin-bottom: 20px;
   object-fit: cover;
-
-  
 }
 
 .about-image img {
