@@ -1,5 +1,5 @@
 import React from 'react'
-import './Coffeeloader.css'
+import './coffeeloader.css'
 function Loader() {
   return (
     <div className='loader'>
