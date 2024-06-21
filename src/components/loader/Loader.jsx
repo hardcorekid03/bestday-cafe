@@ -1,7 +1,6 @@
 import React from 'react'
-import "./Coffeeloader.css"
-
-function Coffeeloader() {
+import './Coffeeloader.css'
+function Loader() {
   return (
     <div className='loader'>
         <svg viewBox="0 0 73 85" role="img" id="skeleton-loadingCoffeeCup">
@@ -26,4 +25,4 @@ function Coffeeloader() {
   )
 }
 
-export default Coffeeloader
+export default Loader;
