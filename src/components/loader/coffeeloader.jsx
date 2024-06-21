@@ -1,9 +1,9 @@
 import React from 'react'
-import "./coffeeloader.css"
+import "./Coffeeloader.css"
 
-function coffeeloader() {
+function Coffeeloader() {
   return (
-    <div>
+    <div className='loader'>
         <svg viewBox="0 0 73 85" role="img" id="skeleton-loadingCoffeeCup">
 <g>
     <path stroke = "#2d2926"  strokeWidth="2.908" strokeLinecap="round" strokeLinejoin="round" fill="#2d2926"
@@ -19,11 +19,11 @@ function coffeeloader() {
         d="M31 26.333c0-2.89 4.063-2.89 4.063-5.777 0-2.89-4.063-2.89-4.063-5.778 0-2.89 4.063-2.89 4.063-5.778M38 26.333c0-2.89 4.063-2.89 4.063-5.777 0-2.89-4.063-2.89-4.063-5.778 0-2.89 4.063-2.89 4.063-5.778" />
 </g>
 </svg>
-<h3>Ha ocurrido un error, <a href="">intentalo nuevamente</a></h3>
-<h4>500</h4>
+<h3>Brewing...</h3>
+
 
     </div>
   )
 }
 
-export default coffeeloader
+export default Coffeeloader

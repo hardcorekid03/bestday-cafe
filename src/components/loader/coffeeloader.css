@@ -47,3 +47,12 @@ body {
   flex-direction: column;
   background: #F6F8FF;    
 }
+
+.loader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust as needed */
+    text-align: justify;
+}

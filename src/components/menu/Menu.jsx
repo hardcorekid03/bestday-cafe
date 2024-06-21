@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./Menu.css";
-
+import Coffeeloader from "../loader/Coffeeloader";
 const CoffeeMenu = () => {
   const [coffees, setCoffees] = useState([]);
   const [loading, setLoading] = useState(true); // Add loading state
@@ -47,7 +47,7 @@ const CoffeeMenu = () => {
         </div>
         {loading ? (
           <div className="container py-5">
-            <p>Loading...</p> {/* Loading message */}
+            <Coffeeloader/>
           </div>
         ) : (
           <div className="container py-5">
