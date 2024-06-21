@@ -42,7 +42,7 @@ function OffcanvasExample() {
               to="/"
               className="align-items-center justify-content-center coffee"
             >
-              <strong className="mocha">Bestday Café</strong>
+              <strong className="mocha">BestDay Cafée</strong>
             </Navbar.Brand>
             <Navbar.Toggle
               aria-controls={`offcanvasNavbar-expand-${expand}`}
