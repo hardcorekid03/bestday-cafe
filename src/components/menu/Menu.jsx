@@ -144,6 +144,20 @@ const CoffeeMenu = () => {
                         ></p>
                       </div>
                       <div className="d-flex justify-content-between align-items-center">
+                        {/* Display Categories */}
+                        <div className="categories">
+                          {coffee._embedded &&
+                            coffee._embedded["wp:term"] &&
+                            coffee._embedded["wp:term"][0].map((category) => (
+                              <span
+                                key={category.id}
+                                className="badge  badge bg-secondary me-2 mb-2"
+                              >
+                                {category.name}
+                              </span>
+                            ))}
+                        </div>
+
                         <div className="btn-group">
                           <button
                             type="button"
@@ -181,6 +195,7 @@ const CoffeeMenu = () => {
               alt={selectedCoffee.title.rendered}
               className="img-fluid mb-3"
             />
+
             <div
               dangerouslySetInnerHTML={{
                 __html: selectedCoffee.excerpt.rendered,
@@ -188,9 +203,9 @@ const CoffeeMenu = () => {
             ></div>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleCloseModal}>
+            {/* <Button variant="secondary" onClick={handleCloseModal}>
               Close
-            </Button>
+            </Button> */}
           </Modal.Footer>
         </Modal>
       )}
