@@ -80,7 +80,6 @@ function OffcanvasExample() {
                     to="/menu"
                     className="nav-link link poppins-medium"
                     onClick={closeOffcanvas} // Close offcanvas when item is clicked
-
                   >
                     Menu
                   </Nav.Link>
@@ -90,7 +89,6 @@ function OffcanvasExample() {
                     to="/gallery"
                     className="nav-link poppins-medium"
                     onClick={closeOffcanvas} // Close offcanvas when item is clicked
-
                   >
                     Gallery
                   </Nav.Link>
@@ -99,7 +97,6 @@ function OffcanvasExample() {
                     to="/blogs"
                     className="nav-link poppins-medium"
                     onClick={closeOffcanvas} // Close offcanvas when item is clicked
-
                   >
                     About
                   </Nav.Link>
@@ -108,7 +105,6 @@ function OffcanvasExample() {
                     to="/contact"
                     className="nav-link  poppins-medium"
                     onClick={closeOffcanvas} // Close offcanvas when item is clicked
-
                   >
                     Contact Us
                   </Nav.Link>

@@ -1,34 +1,31 @@
 .nav-link {
-  color:#110803;
+  color: #110803;
   margin-right: 10px;
 }
 .nav-link:hover {
   font-weight: bold;
-  color:#cf8b5c;
+  color: #cf8b5c;
 }
 
 .offcanvas-title {
   font-weight: bold;
-  color:#cf8b5c;
+  color: #cf8b5c;
 }
 
-.navbar{
+.navbar {
   align-items: center;
   background-color: transparent;
   transition: background-color 0.3s, opacity 0.3s;
 }
 .navbar.scrolled {
   background-color: #ffff;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
 }
 
 .active-link {
   font-weight: bold;
 }
-.navbar-offcanvas{
-background-color: white;
-
+.navbar-offcanvas {
+  background-color: white;
 }
 
 /* Navbar.css */
