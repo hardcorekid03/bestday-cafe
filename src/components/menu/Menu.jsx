@@ -3,34 +3,82 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "./Menu.css";
 import Loader from "../loader/Loader";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 
 const CoffeeMenu = () => {
   const [coffees, setCoffees] = useState([]);
-  const [loading, setLoading] = useState(true); // Add loading state
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const apiKey = import.meta.env.VITE_BACKEND_URL; // Variable for backend
+  // Modal states
+  const [showModal, setShowModal] = useState(false);
+  const [selectedCoffee, setSelectedCoffee] = useState(null);
+
+  const apiKey = "http://official.evbgroup.biz/wp-json/wp/v2/posts";
+
+  // Truncate function to limit excerpt length
+  const truncateExcerpt = (excerpt, maxLength) => {
+    const text = excerpt.replace(/<\/?[^>]+(>|$)/g, ""); // Strip HTML tags
+    return text.length > maxLength
+      ? `${text.substring(0, maxLength)}...`
+      : text;
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
-    fetch(apiKey + "api/coffee")
-      .then((response) => response.json())
+    fetch(apiKey)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch posts.");
+        }
+        return response.json();
+      })
       .then((data) => {
         setCoffees(data);
-        setLoading(false); // Set loading to false after data is fetched
+        setLoading(false);
       })
       .catch((error) => {
-        console.log(error);
-        setLoading(false); // Set loading to false even if there's an error
+        console.error(error);
+        setError("Failed to load the menu.");
+        setLoading(false);
       });
-  }, [apiKey]);
+  }, []);
 
   useEffect(() => {
     AOS.init();
     AOS.refresh();
   }, []);
+
+  // Modal handlers
+  const handleOpenModal = (coffee) => {
+    setSelectedCoffee(coffee);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedCoffee(null);
+    setShowModal(false);
+  };
+
+  if (loading) {
+    return (
+      <div className="container py-5">
+        <Loader />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="container py-5">
+        <p className="text-danger">{error}</p>
+      </div>
+    );
+  }
 
   return (
     <main>
@@ -46,49 +94,79 @@ const CoffeeMenu = () => {
             </p>
           </div>
         </div>
-        {loading ? (
-          <div className="container py-5">
-            <Loader/>
-          </div>
-        ) : (
-          <div className="container py-5">
-            <div className="container">
-              <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                {coffees.slice(0, 24).map((coffee) => (
-                  <div className="col-md-4" key={coffee.id}>
-                    <div className="card shadow-sm">
-                      <img
-                        src={coffee.image}
-                        className="card-img-top"
-                        data-aos="flip-up"
-                        width="100%"
-                        height="225"
-                        alt={coffee.name}
-                      />
-                      <div className="card-body" data-aos="fade-up">
-                        <h5 className="card-title">{coffee.name}</h5>
-                        <p className="card-text">{coffee.description}</p>
-                        <p className="card-text">Price: Php. {coffee.price}.00</p>
-                        <p className="card-text">Created: {coffee.createdAt}</p>
-                        <div className="d-flex justify-content-between align-items-center">
-                          <div className="btn-group">
-                            <button type="button" className="btn btn-sm btn-secondary">
-                              Order Now
-                            </button>
-                          </div>
-                          <small className="text-body-secondary">
-                            {coffee.hot_or_cold}
-                          </small>
-                        </div>
+        <div className="container py-5">
+          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {coffees.slice(0, 24).map((coffee) => (
+              <div className="col-md-4" key={coffee.id}>
+                <div className="card shadow-sm">
+                  <img
+                    src={
+                      coffee.featured_image_url ||
+                      "https://coffective.com/wp-content/uploads/2018/06/default-featured-image.png.jpg"
+                    }
+                    className="card-img-top"
+                    data-aos="flip-up"
+                    width="100%"
+                    height="225"
+                    alt={coffee.title.rendered}
+                  />
+                  <div className="card-body" data-aos="fade-up">
+                    <h5 className="card-title">{coffee.title.rendered}</h5>
+                    <div className="d-flex justify-content-between align-items-center">
+                      <p
+                        className="card-text"
+                        dangerouslySetInnerHTML={{
+                          __html: truncateExcerpt(coffee.excerpt.rendered, 50),
+                        }}
+                      ></p>
+                    </div>
+                    <div className="d-flex justify-content-between align-items-center">
+                      <div className="btn-group">
+                        <button
+                          type="button"
+                          className="btn btn-sm btn-secondary"
+                          onClick={() => handleOpenModal(coffee)}
+                        >
+                          More Details
+                        </button>
                       </div>
                     </div>
                   </div>
-                ))}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
-        )}
+        </div>
       </section>
+
+      {/* Modal for Full Excerpt */}
+      {selectedCoffee && (
+        <Modal show={showModal} onHide={handleCloseModal} centered>
+          <Modal.Header closeButton>
+            <Modal.Title>{selectedCoffee.title.rendered}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <img
+              src={
+                selectedCoffee.featured_image_url ||
+                "https://coffective.com/wp-content/uploads/2018/06/default-featured-image.png.jpg"
+              }
+              alt={selectedCoffee.title.rendered}
+              className="img-fluid mb-3"
+            />
+            <div
+              dangerouslySetInnerHTML={{
+                __html: selectedCoffee.excerpt.rendered,
+              }}
+            ></div>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleCloseModal}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      )}
     </main>
   );
 };

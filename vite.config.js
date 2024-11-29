@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api/coffee": {
-        target: "https://mern-server-mwrx.onrender.com",
+        target: "https://mern-server-mwrx.onrender.com" || "http://localhost:4000" ,
         secure: false,
       },
     },
