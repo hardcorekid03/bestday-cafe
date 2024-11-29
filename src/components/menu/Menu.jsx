@@ -45,6 +45,11 @@ const CoffeeMenu = () => {
         console.error(error);
         setError("Failed to load the menu.");
         setLoading(false);
+        return (
+          <div className="container py-5">
+            <Loader />
+          </div>
+        );
       });
   }, []);
 
