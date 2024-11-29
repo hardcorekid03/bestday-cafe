@@ -15,7 +15,7 @@ const CoffeeMenu = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedCoffee, setSelectedCoffee] = useState(null);
 
-  const apiKey = "http://official.evbgroup.biz/wp-json/wp/v2/posts";
+  const apiKey = "http://official.evbgroup.biz/wp-json/wp/v2/posts?_embed";
 
   // Truncate function to limit excerpt length
   const truncateExcerpt = (excerpt, maxLength) => {
@@ -96,45 +96,56 @@ const CoffeeMenu = () => {
         </div>
         <div className="container py-5">
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            {coffees.slice(0, 24).map((coffee) => (
-              <div className="col-md-4" key={coffee.id}>
-                <div className="card shadow-sm">
-                  <img
-                    src={
-                      coffee.featured_image_url ||
-                      "https://coffective.com/wp-content/uploads/2018/06/default-featured-image.png.jpg"
-                    }
-                    className="card-img-top"
-                    data-aos="flip-up"
-                    width="100%"
-                    height="225"
-                    alt={coffee.title.rendered}
-                  />
-                  <div className="card-body" data-aos="fade-up">
-                    <h5 className="card-title">{coffee.title.rendered}</h5>
-                    <div className="d-flex justify-content-between align-items-center">
-                      <p
-                        className="card-text"
-                        dangerouslySetInnerHTML={{
-                          __html: truncateExcerpt(coffee.excerpt.rendered, 50),
-                        }}
-                      ></p>
-                    </div>
-                    <div className="d-flex justify-content-between align-items-center">
-                      <div className="btn-group">
-                        <button
-                          type="button"
-                          className="btn btn-sm btn-secondary"
-                          onClick={() => handleOpenModal(coffee)}
-                        >
-                          More Details
-                        </button>
+            {coffees.slice(0, 24).map((coffee) => {
+              // Get featured image URL
+              const featuredImage =
+                coffee._embedded &&
+                coffee._embedded["wp:featuredmedia"] &&
+                coffee._embedded["wp:featuredmedia"][0]?.source_url;
+
+              return (
+                <div className="col-md-4" key={coffee.id}>
+                  <div className="card shadow-sm">
+                    <img
+                      src={
+                        featuredImage ||
+                        "https://coffective.com/wp-content/uploads/2018/06/default-featured-image.png.jpg"
+                      }
+                      className="card-img-top"
+                      data-aos="flip-up"
+                      width="100%"
+                      height="225"
+                      alt={coffee.title.rendered}
+                    />
+                    <div className="card-body" data-aos="fade-up">
+                      <h5 className="card-title">{coffee.title.rendered}</h5>
+                      <div className="d-flex justify-content-between align-items-center">
+                        <p
+                          className="card-text"
+                          dangerouslySetInnerHTML={{
+                            __html: truncateExcerpt(
+                              coffee.excerpt.rendered,
+                              50
+                            ),
+                          }}
+                        ></p>
+                      </div>
+                      <div className="d-flex justify-content-between align-items-center">
+                        <div className="btn-group">
+                          <button
+                            type="button"
+                            className="btn btn-sm btn-secondary"
+                            onClick={() => handleOpenModal(coffee)}
+                          >
+                            More Details
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -143,13 +154,16 @@ const CoffeeMenu = () => {
       {selectedCoffee && (
         <Modal show={showModal} onHide={handleCloseModal} centered>
           <Modal.Header closeButton>
-            <Modal.Title>{selectedCoffee.title.rendered}</Modal.Title>
+            <Modal.Title>
+              {selectedCoffee.title.rendered} {selectedCoffee.category}
+            </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <img
               src={
-                selectedCoffee.featured_image_url ||
-                "https://coffective.com/wp-content/uploads/2018/06/default-featured-image.png.jpg"
+                selectedCoffee._embedded &&
+                selectedCoffee._embedded["wp:featuredmedia"] &&
+                selectedCoffee._embedded["wp:featuredmedia"][0]?.source_url
               }
               alt={selectedCoffee.title.rendered}
               className="img-fluid mb-3"
