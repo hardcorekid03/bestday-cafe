@@ -15,7 +15,7 @@ const CoffeeMenu = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedCoffee, setSelectedCoffee] = useState(null);
 
-  const apiKey = "official.evbgroup.biz/wp-json/wp/v2/posts?_embed";
+  const apiKey = "https://evbgroup.biz/wp-json/wp/v2/posts?_embed";
 
   // Truncate function to limit excerpt length
   const truncateExcerpt = (excerpt, maxLength) => {
