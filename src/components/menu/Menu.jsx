@@ -71,7 +71,15 @@ const CoffeeMenu = () => {
 
   if (loading) {
     return (
-      <div className="container py-5">
+      <div
+        className="api-loader"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
         <Loader />
       </div>
     );
