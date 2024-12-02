@@ -198,7 +198,7 @@ const CoffeeMenu = () => {
 
             <div
               dangerouslySetInnerHTML={{
-                __html: selectedCoffee.excerpt.rendered,
+                __html: selectedCoffee.content.rendered,
               }}
             ></div>
           </Modal.Body>
