@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 import "./Menu.css";
 import Loader from "../loader/Loader";
 import Modal from "react-bootstrap/Modal";
+import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
 const CoffeeMenu = () => {
@@ -108,72 +109,78 @@ const CoffeeMenu = () => {
           </div>
         </div>
         <div className="container py-5">
-          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            {coffees.slice(0, 24).map((coffee) => {
-              // Get featured image URL
-              const featuredImage =
-                coffee._embedded &&
-                coffee._embedded["wp:featuredmedia"] &&
-                coffee._embedded["wp:featuredmedia"][0]?.source_url;
+          {coffees.length === 0 ? (
+            <div className="text-center">
+              <p className="text-muted">No records found.</p>
+            </div>
+          ) : (
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+              {coffees.slice(0, 24).map((coffee) => {
+                // Get featured image URL
+                const featuredImage =
+                  coffee._embedded &&
+                  coffee._embedded["wp:featuredmedia"] &&
+                  coffee._embedded["wp:featuredmedia"][0]?.source_url;
 
-              return (
-                <div className="col-md-4" key={coffee.id}>
-                  <div className="card shadow-sm">
-                    <img
-                      src={
-                        featuredImage ||
-                        "https://coffective.com/wp-content/uploads/2018/06/default-featured-image.png.jpg"
-                      }
-                      className="card-img-top"
-                      data-aos="flip-up"
-                      width="100%"
-                      height="225"
-                      alt={coffee.title.rendered}
-                    />
-                    <div className="card-body" data-aos="fade-up">
-                      <h5 className="card-title">{coffee.title.rendered}</h5>
-                      <div className="d-flex justify-content-between align-items-center">
-                        <p
-                          className="card-text"
-                          dangerouslySetInnerHTML={{
-                            __html: truncateExcerpt(
-                              coffee.excerpt.rendered,
-                              50
-                            ),
-                          }}
-                        ></p>
-                      </div>
-                      <div className="d-flex justify-content-between align-items-center">
-                        {/* Display Categories */}
-                        <div className="categories">
-                          {coffee._embedded &&
-                            coffee._embedded["wp:term"] &&
-                            coffee._embedded["wp:term"][0].map((category) => (
-                              <span
-                                key={category.id}
-                                className="badge  badge bg-secondary me-2 mb-2"
-                              >
-                                {category.name}
-                              </span>
-                            ))}
+                return (
+                  <div className="col-md-4" key={coffee.id}>
+                    <div className="card shadow-sm">
+                      <img
+                        src={
+                          featuredImage ||
+                          "https://coffective.com/wp-content/uploads/2018/06/default-featured-image.png.jpg"
+                        }
+                        className="card-img-top"
+                        data-aos="flip-up"
+                        width="100%"
+                        height="225"
+                        alt={coffee.title.rendered}
+                      />
+                      <div className="card-body" data-aos="fade-up">
+                        <h5 className="card-title">{coffee.title.rendered}</h5>
+                        <div className="d-flex justify-content-between align-items-center">
+                          <p
+                            className="card-text"
+                            dangerouslySetInnerHTML={{
+                              __html: truncateExcerpt(
+                                coffee.excerpt.rendered,
+                                50
+                              ),
+                            }}
+                          ></p>
                         </div>
+                        <div className="d-flex justify-content-between align-items-center">
+                          {/* Display Categories */}
+                          <div className="categories">
+                            {coffee._embedded &&
+                              coffee._embedded["wp:term"] &&
+                              coffee._embedded["wp:term"][0].map((category) => (
+                                <span
+                                  key={category.id}
+                                  className="badge  badge bg-success me-2 mb-2"
+                                >
+                                  {category.name}
+                                </span>
+                              ))}
+                          </div>
 
-                        <div className="btn-group">
-                          <button
-                            type="button"
-                            className="btn btn-sm btn-secondary"
-                            onClick={() => handleOpenModal(coffee)}
-                          >
-                            More Details
-                          </button>
+                          <div className="btn-group">
+                            <button
+                              type="button"
+                              className="btn btn-sm btn-secondary"
+                              onClick={() => handleOpenModal(coffee)}
+                            >
+                              More Details
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
+          )}
         </div>
       </section>
 
@@ -181,32 +188,44 @@ const CoffeeMenu = () => {
       {selectedCoffee && (
         <Modal show={showModal} onHide={handleCloseModal} centered>
           <Modal.Header closeButton>
-            <Modal.Title>
-              {selectedCoffee.title.rendered} {selectedCoffee.category}
-            </Modal.Title>
+            <Modal.Title>{selectedCoffee.title.rendered}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <img
-              src={
-                selectedCoffee._embedded &&
-                selectedCoffee._embedded["wp:featuredmedia"] &&
-                selectedCoffee._embedded["wp:featuredmedia"][0]?.source_url
-              }
-              alt={selectedCoffee.title.rendered}
-              className="img-fluid mb-3"
-            />
+            <Card style={{ width: "100%" }}>
+              <Card.Img
+                variant="top"
+                src={
+                  (selectedCoffee._embedded &&
+                    selectedCoffee._embedded["wp:featuredmedia"] &&
+                    selectedCoffee._embedded["wp:featuredmedia"][0]
+                      ?.source_url) ||
+                  "https://coffective.com/wp-content/uploads/2018/06/default-featured-image.png.jpg"
+                }
+              />
+              <Card.Body>
+                <Card.Title>
+                  {selectedCoffee._embedded &&
+                    selectedCoffee._embedded["wp:term"] &&
+                    selectedCoffee._embedded["wp:term"][0].map((category) => (
+                      <span
+                        key={category.id}
+                        className="badge  badge bg-success  me-2 "
+                      >
+                        {category.name}
+                      </span>
+                    ))}
+                  {selectedCoffee.title.rendered}
+                </Card.Title>
 
-            <div
-              dangerouslySetInnerHTML={{
-                __html: selectedCoffee.content.rendered,
-              }}
-            ></div>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: selectedCoffee.content.rendered,
+                  }}
+                />
+              </Card.Body>
+            </Card>
           </Modal.Body>
-          <Modal.Footer>
-            {/* <Button variant="secondary" onClick={handleCloseModal}>
-              Close
-            </Button> */}
-          </Modal.Footer>
+          {/* <Modal.Footer></Modal.Footer> */}
         </Modal>
       )}
     </main>
